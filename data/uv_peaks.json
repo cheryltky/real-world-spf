@@ -1,0 +1,957 @@
+{
+ "source": "ARPANSA Ultraviolet Radiation Index, one-minute data, via data.gov.au",
+ "licence": "CC BY 2.5 AU (Australian Radiation Protection and Nuclear Safety Agency)",
+ "measures": {
+  "typical": "median daily maximum UV index (15-minute rolling median)",
+  "clear": "90th percentile daily maximum UV index",
+  "noon": "UV-weighted centre of the daily curve, hours in local standard time (no daylight saving)",
+  "spread": "UV-weighted standard deviation of the daily curve, hours"
+ },
+ "cities": {
+  "Darwin": {
+   "station": "darwin",
+   "years": [
+    2016,
+    2025
+   ],
+   "months": [
+    {
+     "month": 1,
+     "typical": 13.4,
+     "clear": 15.1,
+     "noon": 12.88,
+     "spread": 2.04,
+     "days": 310
+    },
+    {
+     "month": 2,
+     "typical": 13.8,
+     "clear": 15.3,
+     "noon": 12.99,
+     "spread": 2.02,
+     "days": 283
+    },
+    {
+     "month": 3,
+     "typical": 13.3,
+     "clear": 14.6,
+     "noon": 12.9,
+     "spread": 1.99,
+     "days": 305
+    },
+    {
+     "month": 4,
+     "typical": 11.1,
+     "clear": 12.5,
+     "noon": 12.77,
+     "spread": 1.96,
+     "days": 300
+    },
+    {
+     "month": 5,
+     "typical": 8.6,
+     "clear": 9.9,
+     "noon": 12.7,
+     "spread": 1.92,
+     "days": 309
+    },
+    {
+     "month": 6,
+     "typical": 7.7,
+     "clear": 8.5,
+     "noon": 12.78,
+     "spread": 1.9,
+     "days": 300
+    },
+    {
+     "month": 7,
+     "typical": 8.1,
+     "clear": 9.0,
+     "noon": 12.86,
+     "spread": 1.9,
+     "days": 310
+    },
+    {
+     "month": 8,
+     "typical": 9.9,
+     "clear": 11.2,
+     "noon": 12.83,
+     "spread": 1.95,
+     "days": 310
+    },
+    {
+     "month": 9,
+     "typical": 11.5,
+     "clear": 13.6,
+     "noon": 12.73,
+     "spread": 2.01,
+     "days": 300
+    },
+    {
+     "month": 10,
+     "typical": 12.2,
+     "clear": 13.9,
+     "noon": 12.59,
+     "spread": 2.05,
+     "days": 310
+    },
+    {
+     "month": 11,
+     "typical": 12.4,
+     "clear": 13.9,
+     "noon": 12.55,
+     "spread": 2.06,
+     "days": 298
+    },
+    {
+     "month": 12,
+     "typical": 12.6,
+     "clear": 14.5,
+     "noon": 12.69,
+     "spread": 2.09,
+     "days": 309
+    }
+   ]
+  },
+  "Townsville": {
+   "station": "townsville",
+   "years": [
+    2016,
+    2025
+   ],
+   "months": [
+    {
+     "month": 1,
+     "typical": 13.6,
+     "clear": 15.5,
+     "noon": 12.4,
+     "spread": 2.17,
+     "days": 310
+    },
+    {
+     "month": 2,
+     "typical": 13.8,
+     "clear": 15.4,
+     "noon": 12.43,
+     "spread": 2.11,
+     "days": 283
+    },
+    {
+     "month": 3,
+     "typical": 12.4,
+     "clear": 13.9,
+     "noon": 12.35,
+     "spread": 2.04,
+     "days": 310
+    },
+    {
+     "month": 4,
+     "typical": 9.6,
+     "clear": 11.2,
+     "noon": 12.18,
+     "spread": 1.98,
+     "days": 299
+    },
+    {
+     "month": 5,
+     "typical": 7.0,
+     "clear": 8.3,
+     "noon": 12.12,
+     "spread": 1.91,
+     "days": 310
+    },
+    {
+     "month": 6,
+     "typical": 6.0,
+     "clear": 6.7,
+     "noon": 12.2,
+     "spread": 1.87,
+     "days": 298
+    },
+    {
+     "month": 7,
+     "typical": 6.4,
+     "clear": 7.2,
+     "noon": 12.33,
+     "spread": 1.89,
+     "days": 310
+    },
+    {
+     "month": 8,
+     "typical": 7.9,
+     "clear": 9.2,
+     "noon": 12.28,
+     "spread": 1.95,
+     "days": 308
+    },
+    {
+     "month": 9,
+     "typical": 9.9,
+     "clear": 11.6,
+     "noon": 12.16,
+     "spread": 2.01,
+     "days": 298
+    },
+    {
+     "month": 10,
+     "typical": 11.3,
+     "clear": 12.8,
+     "noon": 12.04,
+     "spread": 2.07,
+     "days": 309
+    },
+    {
+     "month": 11,
+     "typical": 12.3,
+     "clear": 13.8,
+     "noon": 12.06,
+     "spread": 2.14,
+     "days": 299
+    },
+    {
+     "month": 12,
+     "typical": 13.1,
+     "clear": 14.3,
+     "noon": 12.25,
+     "spread": 2.19,
+     "days": 309
+    }
+   ]
+  },
+  "Brisbane": {
+   "station": "brisbane",
+   "years": [
+    2016,
+    2025
+   ],
+   "months": [
+    {
+     "month": 1,
+     "typical": 12.6,
+     "clear": 13.9,
+     "noon": 11.98,
+     "spread": 2.21,
+     "days": 310
+    },
+    {
+     "month": 2,
+     "typical": 11.9,
+     "clear": 13.1,
+     "noon": 12.02,
+     "spread": 2.14,
+     "days": 282
+    },
+    {
+     "month": 3,
+     "typical": 9.3,
+     "clear": 11.1,
+     "noon": 11.94,
+     "spread": 2.05,
+     "days": 288
+    },
+    {
+     "month": 4,
+     "typical": 6.9,
+     "clear": 8.2,
+     "noon": 11.76,
+     "spread": 1.94,
+     "days": 300
+    },
+    {
+     "month": 5,
+     "typical": 4.5,
+     "clear": 5.7,
+     "noon": 11.7,
+     "spread": 1.83,
+     "days": 307
+    },
+    {
+     "month": 6,
+     "typical": 3.6,
+     "clear": 4.1,
+     "noon": 11.77,
+     "spread": 1.77,
+     "days": 297
+    },
+    {
+     "month": 7,
+     "typical": 3.9,
+     "clear": 4.6,
+     "noon": 11.89,
+     "spread": 1.79,
+     "days": 304
+    },
+    {
+     "month": 8,
+     "typical": 5.2,
+     "clear": 6.2,
+     "noon": 11.83,
+     "spread": 1.88,
+     "days": 309
+    },
+    {
+     "month": 9,
+     "typical": 7.2,
+     "clear": 8.2,
+     "noon": 11.69,
+     "spread": 1.98,
+     "days": 300
+    },
+    {
+     "month": 10,
+     "typical": 8.9,
+     "clear": 10.3,
+     "noon": 11.55,
+     "spread": 2.1,
+     "days": 310
+    },
+    {
+     "month": 11,
+     "typical": 10.7,
+     "clear": 12.1,
+     "noon": 11.56,
+     "spread": 2.18,
+     "days": 300
+    },
+    {
+     "month": 12,
+     "typical": 11.9,
+     "clear": 13.1,
+     "noon": 11.77,
+     "spread": 2.23,
+     "days": 310
+    }
+   ]
+  },
+  "Perth": {
+   "station": "perth",
+   "years": [
+    2016,
+    2025
+   ],
+   "months": [
+    {
+     "month": 1,
+     "typical": 12.0,
+     "clear": 12.9,
+     "noon": 12.44,
+     "spread": 2.28,
+     "days": 310
+    },
+    {
+     "month": 2,
+     "typical": 11.1,
+     "clear": 12.3,
+     "noon": 12.51,
+     "spread": 2.21,
+     "days": 283
+    },
+    {
+     "month": 3,
+     "typical": 8.7,
+     "clear": 10.0,
+     "noon": 12.45,
+     "spread": 2.08,
+     "days": 309
+    },
+    {
+     "month": 4,
+     "typical": 5.8,
+     "clear": 7.1,
+     "noon": 12.3,
+     "spread": 1.94,
+     "days": 299
+    },
+    {
+     "month": 5,
+     "typical": 3.5,
+     "clear": 4.5,
+     "noon": 12.22,
+     "spread": 1.83,
+     "days": 309
+    },
+    {
+     "month": 6,
+     "typical": 2.7,
+     "clear": 3.1,
+     "noon": 12.28,
+     "spread": 1.74,
+     "days": 300
+    },
+    {
+     "month": 7,
+     "typical": 2.8,
+     "clear": 3.4,
+     "noon": 12.37,
+     "spread": 1.78,
+     "days": 310
+    },
+    {
+     "month": 8,
+     "typical": 4.0,
+     "clear": 4.9,
+     "noon": 12.32,
+     "spread": 1.89,
+     "days": 309
+    },
+    {
+     "month": 9,
+     "typical": 6.0,
+     "clear": 7.0,
+     "noon": 12.16,
+     "spread": 2.02,
+     "days": 300
+    },
+    {
+     "month": 10,
+     "typical": 8.3,
+     "clear": 9.4,
+     "noon": 12.04,
+     "spread": 2.15,
+     "days": 310
+    },
+    {
+     "month": 11,
+     "typical": 10.1,
+     "clear": 11.2,
+     "noon": 12.06,
+     "spread": 2.27,
+     "days": 299
+    },
+    {
+     "month": 12,
+     "typical": 11.7,
+     "clear": 12.7,
+     "noon": 12.25,
+     "spread": 2.31,
+     "days": 310
+    }
+   ]
+  },
+  "Sydney": {
+   "station": "sydney",
+   "years": [
+    2016,
+    2025
+   ],
+   "months": [
+    {
+     "month": 1,
+     "typical": 11.7,
+     "clear": 13.0,
+     "noon": 12.1,
+     "spread": 2.26,
+     "days": 310
+    },
+    {
+     "month": 2,
+     "typical": 10.5,
+     "clear": 12.2,
+     "noon": 12.17,
+     "spread": 2.17,
+     "days": 283
+    },
+    {
+     "month": 3,
+     "typical": 7.9,
+     "clear": 9.6,
+     "noon": 12.12,
+     "spread": 2.05,
+     "days": 309
+    },
+    {
+     "month": 4,
+     "typical": 5.1,
+     "clear": 6.6,
+     "noon": 11.96,
+     "spread": 1.92,
+     "days": 300
+    },
+    {
+     "month": 5,
+     "typical": 3.1,
+     "clear": 4.2,
+     "noon": 11.89,
+     "spread": 1.78,
+     "days": 310
+    },
+    {
+     "month": 6,
+     "typical": 2.3,
+     "clear": 2.7,
+     "noon": 11.95,
+     "spread": 1.72,
+     "days": 300
+    },
+    {
+     "month": 7,
+     "typical": 2.5,
+     "clear": 3.0,
+     "noon": 12.06,
+     "spread": 1.76,
+     "days": 310
+    },
+    {
+     "month": 8,
+     "typical": 3.7,
+     "clear": 4.5,
+     "noon": 12.01,
+     "spread": 1.88,
+     "days": 310
+    },
+    {
+     "month": 9,
+     "typical": 5.4,
+     "clear": 6.5,
+     "noon": 11.85,
+     "spread": 2.01,
+     "days": 300
+    },
+    {
+     "month": 10,
+     "typical": 7.5,
+     "clear": 8.8,
+     "noon": 11.7,
+     "spread": 2.14,
+     "days": 310
+    },
+    {
+     "month": 11,
+     "typical": 9.4,
+     "clear": 10.9,
+     "noon": 11.7,
+     "spread": 2.25,
+     "days": 300
+    },
+    {
+     "month": 12,
+     "typical": 11.2,
+     "clear": 12.6,
+     "noon": 11.91,
+     "spread": 2.29,
+     "days": 310
+    }
+   ]
+  },
+  "Canberra": {
+   "station": "canberra",
+   "years": [
+    2016,
+    2025
+   ],
+   "months": [
+    {
+     "month": 1,
+     "typical": 11.3,
+     "clear": 12.4,
+     "noon": 12.22,
+     "spread": 2.25,
+     "days": 300
+    },
+    {
+     "month": 2,
+     "typical": 10.1,
+     "clear": 11.4,
+     "noon": 12.28,
+     "spread": 2.17,
+     "days": 277
+    },
+    {
+     "month": 3,
+     "typical": 7.6,
+     "clear": 9.1,
+     "noon": 12.23,
+     "spread": 2.06,
+     "days": 308
+    },
+    {
+     "month": 4,
+     "typical": 4.8,
+     "clear": 6.2,
+     "noon": 12.1,
+     "spread": 1.9,
+     "days": 299
+    },
+    {
+     "month": 5,
+     "typical": 2.7,
+     "clear": 3.7,
+     "noon": 12.03,
+     "spread": 1.77,
+     "days": 310
+    },
+    {
+     "month": 6,
+     "typical": 1.9,
+     "clear": 2.4,
+     "noon": 12.1,
+     "spread": 1.69,
+     "days": 300
+    },
+    {
+     "month": 7,
+     "typical": 2.2,
+     "clear": 2.6,
+     "noon": 12.18,
+     "spread": 1.72,
+     "days": 309
+    },
+    {
+     "month": 8,
+     "typical": 3.2,
+     "clear": 4.0,
+     "noon": 12.15,
+     "spread": 1.84,
+     "days": 310
+    },
+    {
+     "month": 9,
+     "typical": 4.9,
+     "clear": 6.1,
+     "noon": 11.98,
+     "spread": 1.99,
+     "days": 300
+    },
+    {
+     "month": 10,
+     "typical": 7.1,
+     "clear": 8.3,
+     "noon": 11.82,
+     "spread": 2.14,
+     "days": 310
+    },
+    {
+     "month": 11,
+     "typical": 9.2,
+     "clear": 10.6,
+     "noon": 11.83,
+     "spread": 2.25,
+     "days": 300
+    },
+    {
+     "month": 12,
+     "typical": 10.8,
+     "clear": 12.0,
+     "noon": 12.02,
+     "spread": 2.29,
+     "days": 310
+    }
+   ]
+  },
+  "Adelaide": {
+   "station": "adelaide",
+   "years": [
+    2016,
+    2025
+   ],
+   "months": [
+    {
+     "month": 1,
+     "typical": 11.6,
+     "clear": 12.7,
+     "noon": 12.42,
+     "spread": 2.31,
+     "days": 283
+    },
+    {
+     "month": 2,
+     "typical": 10.3,
+     "clear": 11.6,
+     "noon": 12.52,
+     "spread": 2.21,
+     "days": 283
+    },
+    {
+     "month": 3,
+     "typical": 8.0,
+     "clear": 9.3,
+     "noon": 12.44,
+     "spread": 2.08,
+     "days": 308
+    },
+    {
+     "month": 4,
+     "typical": 5.0,
+     "clear": 6.3,
+     "noon": 12.32,
+     "spread": 1.92,
+     "days": 298
+    },
+    {
+     "month": 5,
+     "typical": 2.9,
+     "clear": 3.7,
+     "noon": 12.23,
+     "spread": 1.79,
+     "days": 310
+    },
+    {
+     "month": 6,
+     "typical": 2.1,
+     "clear": 2.5,
+     "noon": 12.31,
+     "spread": 1.71,
+     "days": 298
+    },
+    {
+     "month": 7,
+     "typical": 2.2,
+     "clear": 2.7,
+     "noon": 12.38,
+     "spread": 1.75,
+     "days": 306
+    },
+    {
+     "month": 8,
+     "typical": 3.3,
+     "clear": 4.0,
+     "noon": 12.34,
+     "spread": 1.87,
+     "days": 305
+    },
+    {
+     "month": 9,
+     "typical": 5.1,
+     "clear": 6.2,
+     "noon": 12.2,
+     "spread": 2.01,
+     "days": 298
+    },
+    {
+     "month": 10,
+     "typical": 7.3,
+     "clear": 8.5,
+     "noon": 12.04,
+     "spread": 2.16,
+     "days": 306
+    },
+    {
+     "month": 11,
+     "typical": 9.3,
+     "clear": 10.7,
+     "noon": 12.06,
+     "spread": 2.27,
+     "days": 299
+    },
+    {
+     "month": 12,
+     "typical": 11.2,
+     "clear": 12.3,
+     "noon": 12.25,
+     "spread": 2.34,
+     "days": 300
+    }
+   ]
+  },
+  "Melbourne": {
+   "station": "melbourne",
+   "years": [
+    2016,
+    2025
+   ],
+   "months": [
+    {
+     "month": 1,
+     "typical": 10.9,
+     "clear": 11.9,
+     "noon": 12.53,
+     "spread": 2.34,
+     "days": 310
+    },
+    {
+     "month": 2,
+     "typical": 9.4,
+     "clear": 10.7,
+     "noon": 12.59,
+     "spread": 2.25,
+     "days": 283
+    },
+    {
+     "month": 3,
+     "typical": 6.9,
+     "clear": 8.4,
+     "noon": 12.52,
+     "spread": 2.1,
+     "days": 310
+    },
+    {
+     "month": 4,
+     "typical": 4.1,
+     "clear": 5.4,
+     "noon": 12.35,
+     "spread": 1.92,
+     "days": 300
+    },
+    {
+     "month": 5,
+     "typical": 2.4,
+     "clear": 3.1,
+     "noon": 12.3,
+     "spread": 1.79,
+     "days": 310
+    },
+    {
+     "month": 6,
+     "typical": 1.7,
+     "clear": 2.1,
+     "noon": 12.35,
+     "spread": 1.7,
+     "days": 300
+    },
+    {
+     "month": 7,
+     "typical": 1.8,
+     "clear": 2.3,
+     "noon": 12.42,
+     "spread": 1.76,
+     "days": 307
+    },
+    {
+     "month": 8,
+     "typical": 2.7,
+     "clear": 3.6,
+     "noon": 12.4,
+     "spread": 1.9,
+     "days": 310
+    },
+    {
+     "month": 9,
+     "typical": 4.3,
+     "clear": 5.5,
+     "noon": 12.26,
+     "spread": 2.08,
+     "days": 300
+    },
+    {
+     "month": 10,
+     "typical": 6.5,
+     "clear": 7.8,
+     "noon": 12.14,
+     "spread": 2.21,
+     "days": 310
+    },
+    {
+     "month": 11,
+     "typical": 8.6,
+     "clear": 10.0,
+     "noon": 12.12,
+     "spread": 2.33,
+     "days": 300
+    },
+    {
+     "month": 12,
+     "typical": 10.6,
+     "clear": 11.4,
+     "noon": 12.33,
+     "spread": 2.42,
+     "days": 308
+    }
+   ]
+  },
+  "Hobart": {
+   "station": "kingston",
+   "years": [
+    2016,
+    2025
+   ],
+   "months": [
+    {
+     "month": 1,
+     "typical": 10.3,
+     "clear": 11.6,
+     "noon": 12.34,
+     "spread": 2.36,
+     "days": 310
+    },
+    {
+     "month": 2,
+     "typical": 8.4,
+     "clear": 9.9,
+     "noon": 12.46,
+     "spread": 2.24,
+     "days": 283
+    },
+    {
+     "month": 3,
+     "typical": 5.8,
+     "clear": 7.4,
+     "noon": 12.34,
+     "spread": 2.07,
+     "days": 309
+    },
+    {
+     "month": 4,
+     "typical": 3.0,
+     "clear": 4.3,
+     "noon": 12.21,
+     "spread": 1.88,
+     "days": 300
+    },
+    {
+     "month": 5,
+     "typical": 1.5,
+     "clear": 2.1,
+     "noon": 12.12,
+     "spread": 1.69,
+     "days": 310
+    },
+    {
+     "month": 6,
+     "typical": 1.0,
+     "clear": 1.2,
+     "noon": 12.18,
+     "spread": 1.6,
+     "days": 297
+    },
+    {
+     "month": 7,
+     "typical": 1.1,
+     "clear": 1.5,
+     "noon": 12.28,
+     "spread": 1.65,
+     "days": 310
+    },
+    {
+     "month": 8,
+     "typical": 1.9,
+     "clear": 2.5,
+     "noon": 12.25,
+     "spread": 1.83,
+     "days": 310
+    },
+    {
+     "month": 9,
+     "typical": 3.3,
+     "clear": 4.4,
+     "noon": 12.07,
+     "spread": 2.0,
+     "days": 300
+    },
+    {
+     "month": 10,
+     "typical": 5.5,
+     "clear": 6.8,
+     "noon": 11.94,
+     "spread": 2.19,
+     "days": 310
+    },
+    {
+     "month": 11,
+     "typical": 7.9,
+     "clear": 9.6,
+     "noon": 11.94,
+     "spread": 2.32,
+     "days": 300
+    },
+    {
+     "month": 12,
+     "typical": 10.0,
+     "clear": 11.3,
+     "noon": 12.18,
+     "spread": 2.4,
+     "days": 310
+    }
+   ]
+  }
+ }
+}

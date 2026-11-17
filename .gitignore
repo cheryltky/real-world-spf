@@ -1,0 +1,9 @@
+data/raw/
+.venv/
+__pycache__/
+.pytest_cache/
+.coverage
+node_modules/
+coverage/
+.claude/
+.DS_Store

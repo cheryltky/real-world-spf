@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Real-World SPF</title>
+<meta name="description" content="How much sun protection do you really get? A Monte Carlo sunscreen simulator built on ARPANSA UV data.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How much SPF are you really getting?">
+<meta property="og:description" content="Squeeze the tube, pick your city and day, and see what reaches your skin. A Monte Carlo sunscreen simulator built on ARPANSA UV data.">
+<meta property="og:image" content="https://cheryltky.github.io/real-world-spf/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=DM+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/site.css">
+<script type="module" src="js/main.js"></script>
+</head>
+<body>
+<header class="hero">
+  <div class="drops" id="drops" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <p class="kicker">Data in Bytes · The Science of Beauty, by the data</p>
+      <h1 style="margin-top:10px">How much SPF are you <em>really</em> getting?</h1>
+      <p class="sub">The number on the bottle is measured with a thick, even layer. Set your own day and squeeze the tube to see what reaches your skin.</p>
+    </div>
+    <figure style="margin:0">
+      <svg id="daySvg" viewBox="0 0 720 300" role="img" aria-label="UV index through the day and the UV that reaches your skin"></svg>
+      <figcaption class="source" id="srcDay">Source: ARPANSA UV index</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+  <section class="wrap panel" aria-label="Your day">
+    <div class="controls">
+      <div class="ctl">
+        <label for="city">Where</label>
+        <select id="city"></select>
+      </div>
+      <div class="ctl">
+        <label for="month">When</label>
+        <select id="month"></select>
+      </div>
+      <div class="ctl">
+        <span class="lbl">Time outside</span>
+        <div style="display:flex; gap:8px">
+          <select id="start" aria-label="Start time"></select>
+          <select id="hours" aria-label="Hours outside"></select>
+        </div>
+      </div>
+      <div class="ctl">
+        <span class="lbl">Your skin (Fitzpatrick type)</span>
+        <div class="swatches" id="skin"></div>
+        <p class="hint" id="skinHint"></p>
+      </div>
+      <div class="ctl">
+        <span class="lbl">What kind of day</span>
+        <div class="chips" id="day"></div>
+      </div>
+      <div class="ctl">
+        <span class="lbl">SPF on the label</span>
+        <div class="chips" id="spf"></div>
+      </div>
+      <div class="ctl">
+        <span class="lbl">Doing what</span>
+        <div class="chips" id="activity"></div>
+      </div>
+      <div class="ctl">
+        <span class="lbl">Reapply every 2 hours?</span>
+        <div class="chips" id="reapply"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap squeeze" aria-label="How much you apply">
+    <div class="squeeze-head">
+      <h2>Squeeze the tube</h2>
+      <p class="mono" id="amountText"></p>
+    </div>
+    <svg id="tubeSvg" viewBox="0 0 1000 190" role="img" aria-label="Amount of sunscreen applied compared with the lab test amount"></svg>
+    <input type="range" id="amount" min="0.2" max="2.5" step="0.05" aria-label="Amount applied, milligrams per square centimetre">
+    <p class="source">Sources: ISO 24444 test amount (2 mg/cm²) · Cancer Council Australia (35 mL per adult body) · Autier et al. 2001 (what people apply)</p>
+    <div class="presets" id="presets"></div>
+  </section>
+
+  <section class="wrap results" aria-label="Results">
+    <div class="fig">
+      <p class="kicker">Figure 1</p>
+      <h3>What's in the bottle vs what's on you</h3>
+      <svg id="bottleSvg" viewBox="0 0 470 470" role="img" aria-label="Bottle chart of label SPF compared with the SPF you get"></svg>
+      <p class="cap">Fill height is SPF on a log scale. Researchers disagree on how SPF falls when you apply less, so the bottle shows both answers: the darker layer is the cautious (exponential) model, the lighter layer the optimistic (linear) one.</p>
+      <p class="source">Sources: Faurschou &amp; Wulf 2007 (cautious) · Bimczok et al. 2007 (optimistic) · Bodekær et al. 2008, Ruvolo et al. 2020 (wear-off)</p>
+    </div>
+    <div class="fig">
+      <p class="kicker">Figure 2</p>
+      <h3 id="sunTitle">Out of 100 people like you</h3>
+      <svg id="sunSvg" viewBox="0 0 470 470" role="img" aria-label="100 simulated people coloured by sunburn outcome"></svg>
+      <p class="cap">Each dot is a simulated person on the same day with the same habits. They differ the way real people do: how much they actually squeeze out, how sensitive their skin is, and how the product performs. The burnt ones sit in the core of the sun, with a heavier outline.</p>
+      <p class="source">Monte Carlo, 1,000 people · burn thresholds: Fajuyigbe &amp; Young 2016 · bottle variation: our assumption</p>
+      <p class="sr-only" id="sunSummary" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="quote">
+      <span class="qmark" aria-hidden="true">&ldquo;</span>
+      <div>
+        <p id="quoteText"></p>
+        <p class="who">Monte Carlo simulation, 1,000 people per setting, ARPANSA UV data 2016–2025</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap method" aria-label="How it works">
+    <div>
+      <h3>How the simulation works</h3>
+      <ul>
+        <li>The day's UV follows a bell curve fitted to ARPANSA's minute-by-minute measurements for the city and month, 2016 to 2025. "Typical day" uses the median daily peak, "Clear day" the 90th percentile.</li>
+        <li>One UV index unit is 0.025 W/m² of sunburn-weighted UV. Dose builds every 5 minutes and is divided by your SPF at that moment.</li>
+        <li>A sunburn is one minimal erythema dose (MED), which depends on skin type.</li>
+        <li>Protection above bare skin halves every few hours: about 6.5 hours with swimming and activity, 8 with sweating and 24 at rest. Reapplying restores it.</li>
+        <li>Each simulated person varies in how much they apply, how their bottle performs and how sensitive their skin is, and gets one of the two dose models at random. The same 1,000 people are reused for every setting, so changes come from your choices, not chance.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Sources</h3>
+      <ul>
+        <li>UV data: ARPANSA Ultraviolet Radiation Index via data.gov.au, CC BY 2.5 AU. Hobart uses the Kingston station.</li>
+        <li>Sunburn thresholds by skin type: Fajuyigbe and Young (2016). Types V and VI are poorly studied.</li>
+        <li>Amount people apply: Autier et al. (2001), median 0.39 mg/cm²; review by Petersen and Wulf (2014).</li>
+        <li>SPF and thickness: exponential, Faurschou and Wulf (2007) and Schalka et al. (2009); linear, Bimczok et al. (2007) and Ou-Yang et al. (2012).</li>
+        <li>Wear-off: Bodekær et al. (2008) and Ruvolo et al. (2020). Two small studies, so treat these as rough.</li>
+        <li>How far a bottle strays from its label is our assumption. CHOICE's June 2025 tests found 16 of 20 SPF 50 products below their label.</li>
+        <li>Test amount: ISO 24444 (2 mg/cm²). 7 teaspoons per adult body and reapplying every 2 hours: Cancer Council Australia.</li>
+        <li>This is a teaching model, not sun safety advice. Follow the SunSmart UV alert and see a doctor about skin concerns.</li>
+      </ul>
+    </div>
+  </section>
+  <footer class="wrap">Data in Bytes · v0.2 · inspired by the dose-before-hazard lesson in Dr Michelle Wong's The Science of Beauty</footer>
+</main>
+
+</body>
+</html>

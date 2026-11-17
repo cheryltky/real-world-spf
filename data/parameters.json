@@ -1,0 +1,91 @@
+{
+ "_note": "Every model assumption, with the value used, a plausible range and its source. status: sourced = value taken from the cited work; derived = calculated from the cited work; assumption = our choice, shown as such on the page.",
+ "uv_index_irradiance": {
+  "value": 0.025, "unit": "W/m2 erythemally weighted per UV index unit", "status": "sourced",
+  "source": "WHO (2002). Global Solar UV Index: A Practical Guide. WHO/SDE/OEH/02.2"
+ },
+ "standard_erythema_dose": {
+  "value": 100, "unit": "J/m2", "status": "sourced",
+  "source": "ISO/CIE 17166:2019 (formerly CIE 125-1997)"
+ },
+ "med_by_skin_type": {
+  "unit": "J/m2", "status": "sourced",
+  "values": {
+   "I":   {"value": 250,  "range": [200, 300]},
+   "II":  {"value": 275,  "range": [250, 300]},
+   "III": {"value": 400,  "range": [300, 500]},
+   "IV":  {"value": 550,  "range": [400, 700]},
+   "V":   {"value": 800,  "range": [600, 2000], "uncertain": true},
+   "VI":  {"value": 1000, "range": [600, 2000], "uncertain": true}
+  },
+  "source": "Fajuyigbe D, Young AR (2016). The impact of skin colour on human photobiological responses. Pigment Cell Melanoma Res 29(6):607-18. doi:10.1111/pcmr.12511 (Table 1)",
+  "note": "Types V and VI are poorly studied. Self-reported skin type predicts measured MED poorly (Falk 2011, doi:10.1111/j.1600-0781.2011.00599.x), which is why each simulated person varies around these values."
+ },
+ "med_person_variation": {
+  "value": 0.25, "unit": "lognormal sigma", "status": "assumption",
+  "note": "Spread of individual sensitivity within a skin type. Wide on purpose, given Falk 2011."
+ },
+ "test_dose": {
+  "value": 2.0, "unit": "mg/cm2", "status": "sourced",
+  "source": "ISO 24444:2019 Cosmetics - Sun protection test methods - In vivo determination of the SPF"
+ },
+ "full_body_amount": {
+  "value": 35, "unit": "mL (about 7 teaspoons)", "status": "sourced",
+  "source": "Cancer Council Australia, Sunscreen advice. cancer.org.au/cancer-information/causes-and-prevention/sun-safety/sunscreen/advice"
+ },
+ "reapply_interval": {
+  "value": 2, "unit": "hours", "status": "sourced",
+  "source": "Cancer Council Australia, Sunscreen advice (reapply every 2 hours and after swimming, sweating or towel-drying)"
+ },
+ "amount_applied_default": {
+  "value": 0.5, "range": [0.39, 1.0], "unit": "mg/cm2", "status": "sourced",
+  "source": "Autier P et al. (2001). Quantity of sunscreen used by European students. Br J Dermatol 144(2):288-91. doi:10.1046/j.1365-2133.2001.04016.x (median 0.39); review: Petersen B, Wulf HC (2014). Application of sunscreen - theory and reality. Photodermatol Photoimmunol Photomed 30:96-101. doi:10.1111/phpp.12099"
+ },
+ "amount_person_variation": {
+  "value": 0.35, "unit": "lognormal sigma", "status": "assumption"
+ },
+ "spf_vs_amount": {
+  "status": "sourced",
+  "models": {
+   "exponential": {
+    "formula": "SPF_eff = SPF ^ (amount / 2)",
+    "sources": [
+     "Faurschou A, Wulf HC (2007). Br J Dermatol 156(4):716-9. doi:10.1111/j.1365-2133.2006.07684.x",
+     "Schalka S et al. (2009). Photodermatol Photoimmunol Photomed 25(4):175-80. doi:10.1111/j.1600-0781.2009.00408.x"
+    ]
+   },
+   "linear": {
+    "formula": "SPF_eff = 1 + (SPF - 1) * amount / 2",
+    "sources": [
+     "Bimczok R et al. (2007). Skin Pharmacol Physiol 20(1):57-64. doi:10.1159/000096173",
+     "Ou-Yang H et al. (2012). J Am Acad Dermatol 67(6):1220-7. doi:10.1016/j.jaad.2012.02.029 (industry-funded)"
+    ]
+   }
+  },
+  "weight_exponential": 0.5,
+  "note": "No review settles which model is right; studies of high-SPF products lean linear. The simulation gives each person one model at random, and the page shows both."
+ },
+ "spf_half_life_hours": {
+  "unit": "hours, SPF decays as 1 + (SPF0 - 1) * 0.5^(t / half_life)", "status": "derived",
+  "values": {
+   "relax": {"value": 24,  "range": [12, 48], "basis": "Ruvolo 2020: no measurable loss over 6 h at rest"},
+   "sport": {"value": 8,   "range": [6, 10],  "basis": "Ruvolo 2020: SPF 50 fell to about 30 after 6 h of sweating"},
+   "beach": {"value": 6.5, "range": [4, 8],   "basis": "Bodekaer 2008: SPF down 55-58% after 8 h of activity and bathing"}
+  },
+  "sources": [
+   "Bodekaer M et al. (2008). Sun protection factor persistence during a day with physical activity and bathing. Photodermatol Photoimmunol Photomed 24(6):296-300. doi:10.1111/j.1600-0781.2008.00379.x",
+   "Ruvolo E, Aeschliman L, Cole C (2020). Evaluation of sunscreen efficacy over time and re-application. Photodermatol Photoimmunol Photomed 36(3):192-9. doi:10.1111/phpp.12535 (industry-funded)"
+  ],
+  "note": "Weak evidence: two small studies. Shown as a range on the page."
+ },
+ "product_spf_variation": {
+  "value": 0.3, "unit": "lognormal sigma around the label SPF", "status": "assumption",
+  "context": "CHOICE (June 2025) tested 20 products labelled SPF 50 or 50+; 16 measured below their label, with results from SPF 4 to 72. choice.com.au/about-us/media/media-releases/2025/june/16-of-20-sunscreens-didnt",
+  "note": "No published inter-laboratory spread found; this value is illustrative."
+ },
+ "uv_clock": {
+  "value": "local standard time", "status": "derived",
+  "note": "ARPANSA timestamps do not shift for daylight saving (Sydney's January peak centres on 12:06, matching solar noon in AEST). The page adds one hour in daylight-saving months for NSW, ACT, VIC, TAS and SA.",
+  "daylight_saving_cities": ["Sydney", "Canberra", "Melbourne", "Hobart", "Adelaide"]
+ }
+}
