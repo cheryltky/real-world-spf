@@ -1,7 +1,7 @@
 // "Squeeze the tube": amount applied as a line of cream along a teaspoon ruler.
 import { el, fmt } from "../svg.js";
 
-const MAX_TSP = 9, ML_PER_TSP = 5, FACE_SHARE = 0.033; // face, neck and ears are about 3% of skin area
+const MAX_TSP = 9, ML_PER_TSP = 5;
 const X = tsp => 250 + tsp / MAX_TSP * 720;
 
 export function drawTube(s, { sc, p }, textEl) {
@@ -26,5 +26,5 @@ export function drawTube(s, { sc, p }, textEl) {
   s.setAttribute("viewBox", "0 0 1000 200");
   s.append(el("line", { x1: X(labTsp), x2: X(labTsp), y1: 52, y2: 124, stroke: "var(--burn)", "stroke-dasharray": "3 4", "stroke-width": 1.5 }));
   s.append(el("text", { x: X(labTsp), y: 44, "text-anchor": "middle", class: "svg-label", fill: "var(--burn)" }, "the lab test amount"));
-  textEl.textContent = `${sc.amount.toFixed(2)} mg/cm² · ${fmt(tsp)} tsp body · ${(tsp * FACE_SHARE).toFixed(2)} tsp face · ${Math.round(sc.amount / p.testDose * 100)}% of the lab amount`;
+  textEl.textContent = `${sc.amount.toFixed(2)} mg/cm² · ${fmt(tsp)} tsp body · ${Math.round(sc.amount / p.testDose * 100)}% of the lab amount`;
 }
